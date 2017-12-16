@@ -1,3 +1,7 @@
+.post-detail-wrapper {
+    margin-right: 40px;
+}
+
 .post-detail-title {
     text-align: left;
     padding: 10px 2px;
@@ -7,8 +11,31 @@
     text-decoration-line: underline    
 }
 
+.post-detail-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+}
+
+.post-detail-filter {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    flex-direction: row !important
+}
+.post-detail-filter input {
+    margin: 0 10px;
+}
+
 .post-detail-content {
     text-align: left;
     font-weight: 100;
     padding-left: 16px;
 }
+.email {
+    /* width: 100%; */
+    height: 200px;
+    align-items: flex-start;
+    text-align: left;
+    white-space: pre-line;
+ }

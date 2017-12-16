@@ -10,7 +10,7 @@ export default class FBPost extends React.Component {
     }
 
     render() {
-        console.log(this.props);
+        // console.log(this.props);
         if (this.props.data && this.props.data !== {})
             return (
                 <ul>
@@ -24,6 +24,6 @@ export default class FBPost extends React.Component {
                     )}
                 </ul>
             )
-        return <p>No data available</p>
+        return <p className = "nodata">No data available</p>
     }
 }

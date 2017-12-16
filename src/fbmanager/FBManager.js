@@ -8,7 +8,7 @@ class FBManager extends React.Component {
     this.state = {
 
     };
-    this.accessToken = `EAACEdEose0cBAIRWHt4AaY4VbgieeZBZBAd2eZAktGrzeMJZAZCFBirff86JIMk5GytDhVGQErMXSWGHz0RfHoQghrdsoGJbiKAejtVhjNli8ZB46ogaTmuxLewuTL4fG2n7rVZAtFkaZBCRPGHBduvinB41vIdGxZBRIxCqwisvQfIufZCgcur0rdT14E473gIYZCPIOKDAN3lDAZDZD`;
+    this.accessToken = `EAACEdEose0cBABn05bRsxx4qNMhFlUI4ilxTgldXB7C3Tw8fmDaFZAvnxmzM4P628knXTNz73bTrdYKZClMZACtH5d6is1SsY5ovCB11wpzbJTfBGeL8r6mAajqlHYRuLf9KcyevvHGsfs15ja6CbTvEniwmNr9ddx2kynGjFdncm1Fgefg0Dy50SFpdyUaNzBWz0H52wZDZD`;
     FBApi.setToken(this.accessToken);
     this.pageName = 'manchesterunited';
   }
@@ -16,7 +16,7 @@ class FBManager extends React.Component {
     fetchData() {
         // const check = prompt("Plz enter input !");
         // if (check === '') {
-            console.log(`/${this.pageName}?fields=posts{message}&access_token=${this.accessToken}`)
+            // console.log(`/${this.pageName}?fields=posts{message}&access_token=${this.accessToken}`)
             if (window.FB)
                 FBApi.getListPosts(this.pageName, response => {
                     if (response.error && response.error.message)

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
+// import logo from './avatar.png';
+import logo from './avatar.png';
 import './App.css';
 import FBManager from './fbmanager/FBManager';
 import FBPost from './fbpost/FBPost';
@@ -44,14 +46,14 @@ class App extends Component {
             return (
                 <div className="App">
                     <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <h1 className="App-title">Welcome to React</h1>
+                        <img src={logo} className="App-logo" alt="logo" />
+                        <h1 className="App-title">Welcome to DaoNamTien's fb tools</h1>
                     </header>
                     <p className="App-intro">
                         To get started, place your  <code>USER_TOKEN</code> here.
                     </p>
                     <FBManager onLoadData = {(data) => this.onLoadData(data)} />
-                    <h2> The post results </h2>
+                    <h2 className = "App-body-title"> The post results </h2>
                     <FBPost data = {data} />
                 </div>
             );

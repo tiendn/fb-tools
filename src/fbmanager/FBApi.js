@@ -19,7 +19,6 @@ export default class FBApi{
 
     static getPostDetail = (postId, callback) => {
         window.FB.api(`/${postId}?fields=comments&access_token=${this.accessToken}`, response => {
-            console.log(response)
             callback(response);
         })
     }
