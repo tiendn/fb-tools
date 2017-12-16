@@ -1,5 +1,6 @@
 import React from 'react';
 import './FBManager.css';
+import FBApi from './FBApi';
 
 class FBManager extends React.Component {
   constructor(props) {
@@ -7,25 +8,29 @@ class FBManager extends React.Component {
     this.state = {
 
     };
-    this.accessToken = `EAAB38uuKAtMBAJ12q4Xi1KT26elLZAtcxZA7dg0gAOB4a8NcZA6je7agKcmzZCzCr8FNTo7ZCL1ZAh1BdIRlE5kyXPAqiyZBPOsjzh2owErbbM2WsUNVxZALnw5DWM04XyonZAn6A9HOUoHDI0VJ8HtmlDWgv7gUZAjNZB0LFL4hmq7ZBHE6oIjHbyiEFKCEEiDoeRUZD`;
+    this.accessToken = `EAACEdEose0cBAIRWHt4AaY4VbgieeZBZBAd2eZAktGrzeMJZAZCFBirff86JIMk5GytDhVGQErMXSWGHz0RfHoQghrdsoGJbiKAejtVhjNli8ZB46ogaTmuxLewuTL4fG2n7rVZAtFkaZBCRPGHBduvinB41vIdGxZBRIxCqwisvQfIufZCgcur0rdT14E473gIYZCPIOKDAN3lDAZDZD`;
+    FBApi.setToken(this.accessToken);
     this.pageName = 'manchesterunited';
   }
 
     fetchData() {
-        console.log(`/${this.pageName}?fields=feed{message}&access_token=${this.accessToken}`)
-        if (window.FB)
-            window.FB.api(`/${this.pageName}?fields=feed{message}&access_token=${this.accessToken}`, response => {
-                if (response.error && response.error.message)
-                    console.log('Successful err for: ', response);
-                else 
-                    this.props.onLoadData(response);
-            })
-        
+        // const check = prompt("Plz enter input !");
+        // if (check === '') {
+            console.log(`/${this.pageName}?fields=posts{message}&access_token=${this.accessToken}`)
+            if (window.FB)
+                FBApi.getListPosts(this.pageName, response => {
+                    if (response.error && response.error.message)
+                        console.log('Successful err for: ', response);
+                    else 
+                        this.props.onLoadData(response);
+                })
+        // }
     }
 
     onTokenChange(event) {
         // console.log(event.target.value)
-        this.token = event.target.value;
+        this.accessToken = event.target.value;
+        FBApi.setToken(this.accessToken);
     }
 
     onPageChange(event) {

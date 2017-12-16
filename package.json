@@ -2,8 +2,10 @@
   "name": "fb-tools",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://tiendn.github.io/fb-tools",
+  "homepage": "https://tiendn.github.io/fb-tools",
   "dependencies": {
+    "eventemitter3": "^3.0.0",
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.0.17"

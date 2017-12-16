@@ -2,16 +2,20 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import FBManager from './fbmanager/FBManager';
-import FBResult from './fbresult/FBResult';
+import FBPost from './fbpost/FBPost';
 
 class App extends Component {
     state = {
         data: null,
-        isLogin: true
+        // isLogin: false,
+        // isHuman: false
+        isLogin: true,
+        isHuman: true
     }
 
     componentWillMount() {
-        this.checkHuman();
+        // this.checkHuman();
+        // this.checkPermission();
     }
 
     checkHuman() {
@@ -20,7 +24,13 @@ class App extends Component {
         
         const checkHuman = prompt(`${a} + ${b} = ??? `);
         if (checkHuman == (a+b))
-            this.setState({ isLogin: true });
+            this.setState({ isHuman: true });
+    }
+
+    checkPermission() {
+        const checkPermission = prompt(`Where are you from ?`);
+        if (checkPermission === 'Internet')
+            this.setState({ isLogin: true }); 
     }
 
     onLoadData(data) {
@@ -30,7 +40,7 @@ class App extends Component {
     render() {
         const {data} = this.state;
         
-        if (this.state.isLogin) 
+        if (this.state.isLogin && this.state.isHuman) 
             return (
                 <div className="App">
                     <header className="App-header">
@@ -41,7 +51,8 @@ class App extends Component {
                         To get started, place your  <code>USER_TOKEN</code> here.
                     </p>
                     <FBManager onLoadData = {(data) => this.onLoadData(data)} />
-                    <FBResult data = {data} />
+                    <h2> The post results </h2>
+                    <FBPost data = {data} />
                 </div>
             );
         return <p>Hello</p>;

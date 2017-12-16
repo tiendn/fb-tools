@@ -1,0 +1,14 @@
+.post-detail-title {
+    text-align: left;
+    padding: 10px 2px;
+}
+.post-detail-title:hover {
+    color: blue;
+    text-decoration-line: underline    
+}
+
+.post-detail-content {
+    text-align: left;
+    font-weight: 100;
+    padding-left: 16px;
+}
